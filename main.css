@@ -1,0 +1,93 @@
+/* ---- layout ---- */
+
+html,
+body {
+  height: 100%;
+  background-color: ghostwhite;
+}
+
+#main-content {
+  height: 100%;
+  margin: 0 20px;
+}
+
+/* ---- buttons ---- */
+
+button {
+  padding: 20px 0;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+/* ---- title screen ---- */
+
+.title-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* ---- game screen ---- */
+
+.game-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.game-screen .header {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.game-screen .main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-screen .number,
+.game-screen .question {
+  flex: 1 0 auto;
+  font-size: 60px;
+}
+
+.game-screen .actions {
+  flex: 2 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-screen .footer {
+
+}
+
+.game-screen .row {
+  display: block;
+}
+
+.game-screen .element {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---- game over screen ---- */
+
+.game-over-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
