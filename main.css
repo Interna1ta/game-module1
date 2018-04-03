@@ -21,6 +21,8 @@ button {
   border-radius: 10px;
 }
 
+
+
 /* ---- title screen ---- */
 
 .title-screen {
@@ -59,10 +61,8 @@ button {
   font-size: 60px;
 }
 
-.game-screen .actions {
-  flex: 2 0 auto;
-  display: flex;
-  flex-direction: column;
+.element img {
+  height: 40px;
 }
 
 .game-screen .footer {
@@ -75,8 +75,8 @@ button {
 
 .game-screen .element {
   display: inline-block;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
   padding: 0;
   margin: 0;
