@@ -26,12 +26,15 @@ function main() {
 			<div class="title-screen">
 				<span class="viewPortSize"></span>
 				<h1 class="title">WHERE ARE<br>THE BALLOT BOXES?</h1>
-				<div class"instructions">
+				<!--<img class="icons" src="https://vignette.wikia.nocookie.net/scribblenauts/images/5/57/Cruise_Liner.png/revision/latest/scale-to-width-down/200?cb=20130224165337">-->
+				<div class="instructions">
+					<!--<img class="icons" src=https://vignette.wikia.nocookie.net/scribblenauts/images/8/8f/Groupie.png/revision/latest/scale-to-width-down/133?cb=20130120215149">-->
 					<ul class="list-instructions">
 						<li><p>Get all the ballot boxes</p></li>
-						<li><p>60 seconds to achieve</p></li>
+						<li><p>30 seconds to achieve</p></li>
 						<li><p>if you don't get all you suck</p></li>
 					</ul>
+					<!--<img class="icons" src="https://vignette.wikia.nocookie.net/scribblenauts/images/7/74/Guard.png/revision/latest/scale-to-width-down/133?cb=20130119210144">-->
 				</div>
 				<div><button class="startGame">A POR ELLOS!!!</button></div>
 				<span class="viewPortSize"></span>
@@ -91,10 +94,13 @@ function main() {
 		buildGameScreen();
 	}
 
-	function buildGameOverScreen(){
+	function buildGameOverScreen() {
 		gameOverScreenElement = createHtml(`<div class="game-over-screen">
-			<h1>Score: 55</h1>
+			<span class="viewPortSize"></span>
+			<h1 class='title'>GAME OVER</h1>
+			<p class='subtitle'>Great job, <br>you didn't avoid the votation</p>
 			<div><button>restart game</button></div>
+			<span class="viewPortSize"></span>
 		</div>`);
 		// --
 		mainContentElement.appendChild(gameOverScreenElement);
@@ -103,7 +109,7 @@ function main() {
 		document.querySelector('body').classList.remove('background-white');
 	}
 
-	function destroyGameOverScreen(){
+	function destroyGameOverScreen() {
 		gameOverScreenElement.remove();
 		restartGameButtonElement.removeEventListener('click', handleRestartClick);
 	}

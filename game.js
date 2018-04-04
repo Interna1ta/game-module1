@@ -22,7 +22,7 @@ function Game(parentElement) {
 	self.numberIndex = null;
 	self.previousIndex = [0,0];
 
-	self.time = 50;
+	self.time = 29;
 	self.hint = "don't think twice, hit them hard";
 	self.score = 0;
 }
@@ -77,6 +77,7 @@ Game.prototype.build = function () {
 	self.boardElement = self.gameScreenElement.querySelector('.board');
 	self.timeElement = self.gameScreenElement.querySelector('.time .value');
 	self.scoreElement = self.gameScreenElement.querySelector('.score .value');
+	self.hintElement = self.gameScreenElement.querySelector('.hint .value');
 	
 	self.buildBoard();
 	
@@ -91,6 +92,7 @@ Game.prototype.build = function () {
 		self.player.update(event);
 		self.player.draw();
 		self.scoreElement.innerText = self.player.score;
+		self.hintElement.innerText = self.player.hint;
 
 	});
 
@@ -125,7 +127,7 @@ Game.prototype.buildBoard = function () {
   for (var i = 0; i < 10; i++) {
     self.board[i] = '<div class="row">';
     for (var j = 0; j < 10; j++) {
-      self.board[i] += '<div class="element" value="' + i + j + '">a</div>';
+      self.board[i] += '<div class="element" value="' + i + j + '"></div>';
     }
     self.board[i] += '</div>';
   }
@@ -133,7 +135,7 @@ Game.prototype.buildBoard = function () {
 	//create the 2d board
 	for (var i = 0; i < 10; i++) {
 		for (var j = 0; j < 10; j++) {
-			self.grid[i][j] += '<div class="element" value="' + i + j + '">a</div>';
+			self.grid[i][j] += '<div class="element" value="' + i + j + '"></div>';
 		}
 	}
 

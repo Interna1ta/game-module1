@@ -3,11 +3,11 @@ html {
   height: 100%;
   box-sizing: border-box;
 }
-
+/*
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
+*/
 body {
   margin: 0;
   padding: 0;
@@ -44,19 +44,25 @@ button {
   background-color: #FA5858;
   border: 2px solid #FFF;
   border-radius: 10px;
-  width: 400px;
+  width: 300px;
   color: #FFF;
   font-family: 'Cabin Sketch';
 }
+
 button:hover {
   background-color: #FE2E2E;
 }
-
 
 button:active {
   /*border: 2px solid #FFF;
   background-color: #FA5858;
   color: #8A0808;*/
+}
+
+@media (min-width: 768px) {
+  button {
+    width: 400px;
+  }
 }
 
 /* ---- title screen ---- */
@@ -71,8 +77,20 @@ button:active {
 
 .title-screen .title {
   font-family: 'Cabin Sketch';
-  font-size: 60px;
+  font-size: 50px;
   color: #FFF;
+}
+
+.title-screen .icons {
+  width: 100px;
+  height: 200px;;
+  padding-top: 30px;
+}
+
+.title-screen .instructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .title-screen .list-instructions {
@@ -89,6 +107,12 @@ button:active {
 
 .title-screen .viewPortSize {
   height: 5vh;
+}
+
+@media (min-width: 768px) {
+  .title-screen .title {
+    font-size: 60px;
+  }
 }
 
 /* ---- game screen ---- */
@@ -108,12 +132,17 @@ button:active {
   display: flex;
   justify-content: space-around;
   background-color: white;
+  margin-bottom: 5vh;
 }
-.game-screen .label,
+.game-screen .time,
 .game-screen .hint,
 .game-screen .score {
   font-weight: 600;
   flex: 33% 1 auto;
+}
+
+.game-screen .hint {
+  color: #FE2E2E;
 }
 
 .game-screen .main {
@@ -121,11 +150,30 @@ button:active {
   justify-content: space-around;
   align-items: center;
 }
-
+.element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px;
+}
 .element img {
   height: 50px;
   align-items: center;
   /*transform: scaleX(-1);*/
+}
+
+.turn {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  /*filter: FlipH;*/
+  -ms-filter: "FlipH";
+}
+
+.element .ballot-box {
+  padding-top: 10px;
+  height: 30px;
 }
 
 .game-screen .footer {
@@ -133,7 +181,7 @@ button:active {
 }
 
 .game-screen .row {
-  display: block;
+  display: flex;
 }
 
 .game-screen .element {
@@ -153,6 +201,18 @@ button:active {
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  color: #FFF;
+  font-family: 'Shadows Into Light';
+}
+
+.game-over-screen .title {
+  font-family: 'Cabin Sketch';
+  font-size: 60px;
+  color: #FFF;
+}
+
+.game-over-screen .subtitle {
+  font-size: 24px;
   color: #FFF;
   font-family: 'Shadows Into Light';
 }

@@ -11,6 +11,7 @@ function Player(grid) {
 	self.image = '<img src="https://vignette.wikia.nocookie.net/scribblenauts/images/7/74/Guard.png/revision/latest/scale-to-width-down/133?cb=20130119210144">';
 	self.score = 0;
 	self.scoreElement = '';
+	self.hint = null;
 }
 
 
@@ -75,7 +76,9 @@ Player.prototype.draw = function(){
 	//debugger;
 	if (index !== 65 && index !== 66) {
 		self.grid[index].innerHTML = self.image;
-		self.grid[previousIdx].innerHTML = 'a';
+		self.grid[previousIdx].innerHTML = '';
+		self.hint = '';
+		if (index == 92) {self.hint = 'OMG! You stole a ballot box'}
 	} else {
 		self.hit(index);
 		self.x = self.previousX;
@@ -111,6 +114,7 @@ Player.prototype.hit = function (index) {
 	var self = this;
 
 	console.log('hit');
+	self.hint = 'Mother fucker!! That hurts!';
 	self.score++;
 	console.log(self.score);
 	//self.scoreElement.innerHTML = self.score;
