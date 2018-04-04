@@ -1,5 +1,6 @@
 /* ---- layout ---- */
 html {
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -12,7 +13,6 @@ body {
   padding: 0;
 }
 
-html,
 body {
   height: 100%;
   background-color: #151515;
@@ -20,6 +20,15 @@ body {
 
 html {
   /*background-color: black;*/
+}
+
+.background-white {
+  background-color: #FFF;
+}
+
+.turn-image {
+  transform: scaleX(-1);
+  /*filter: FlipH;*/
 }
 
 #main-content {
@@ -33,17 +42,22 @@ button {
   padding: 20px 0;
   font-size: 20px;
   background-color: #FA5858;
-  border: 2px solid black;
+  border: 2px solid #FFF;
   border-radius: 10px;
   width: 400px;
   color: #FFF;
   font-family: 'Cabin Sketch';
 }
-button:hover{
+button:hover {
   background-color: #FE2E2E;
 }
 
 
+button:active {
+  /*border: 2px solid #FFF;
+  background-color: #FA5858;
+  color: #8A0808;*/
+}
 
 /* ---- title screen ---- */
 
@@ -85,12 +99,21 @@ button:hover{
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  background-color: #FFF;
+  font-family: 'Shadows Into Light';
+  font-size: 20px;
 }
 
 .game-screen .header {
   display: flex;
   justify-content: space-around;
   background-color: white;
+}
+.game-screen .label,
+.game-screen .hint,
+.game-screen .score {
+  font-weight: 600;
+  flex: 33% 1 auto;
 }
 
 .game-screen .main {
@@ -99,14 +122,10 @@ button:hover{
   align-items: center;
 }
 
-.game-screen .number,
-.game-screen .question {
-  flex: 1 0 auto;
-  font-size: 60px;
-}
-
 .element img {
-  height: 40px;
+  height: 50px;
+  align-items: center;
+  /*transform: scaleX(-1);*/
 }
 
 .game-screen .footer {
@@ -119,8 +138,8 @@ button:hover{
 
 .game-screen .element {
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border: 1px solid black;
   padding: 0;
   margin: 0;
@@ -134,4 +153,6 @@ button:hover{
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  color: #FFF;
+  font-family: 'Shadows Into Light';
 }

@@ -30,7 +30,7 @@ function main() {
 					<ul class="list-instructions">
 						<li><p>Get all the ballot boxes</p></li>
 						<li><p>60 seconds to achieve</p></li>
-						<li><p>if you don't guess you suck</p></li>
+						<li><p>if you don't get all you suck</p></li>
 					</ul>
 				</div>
 				<div><button class="startGame">A POR ELLOS!!!</button></div>
@@ -94,12 +94,13 @@ function main() {
 	function buildGameOverScreen(){
 		gameOverScreenElement = createHtml(`<div class="game-over-screen">
 			<h1>Score: 55</h1>
-			<button>restart game</button>
+			<div><button>restart game</button></div>
 		</div>`);
 		// --
 		mainContentElement.appendChild(gameOverScreenElement);
 		restartGameButtonElement = gameOverScreenElement.querySelector('button');
 		restartGameButtonElement.addEventListener('click', handleRestartClick);
+		document.querySelector('body').classList.remove('background-white');
 	}
 
 	function destroyGameOverScreen(){

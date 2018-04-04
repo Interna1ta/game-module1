@@ -4,6 +4,7 @@ function Game(parentElement) {
 	var self = this;
 
 	self.parentElement = parentElement;
+	self.mainContentElement = null;
 	self.gameScreenElement = null;
 
 	self.timeElement = null;
@@ -22,7 +23,7 @@ function Game(parentElement) {
 	self.previousIndex = [0,0];
 
 	self.time = 50;
-	self.hint = null;
+	self.hint = "don't think twice, hit them hard";
 	self.score = 0;
 }
 
@@ -38,22 +39,28 @@ Game.prototype.onEnded = function(cb) {
 Game.prototype.build = function () {
 	var self = this;
 	// self.grid = [[],[],[],[],[],[],[],[],[],[]];
-
+	
 	self.gameScreenElement = createHtml(`<div id="main-game">
 		<div class="game-screen">
 			<div class="header">
-				<p class="time">
-				<span class="label">time:</span>
-				<span class="value">`+ (self.time + 1) +`</span>
-				</p>
-				<p class="hint">
-				<span class="label">hint:</span>
-				<span class="value">`+ (self.hint + 1) +`</span>
-				</p>
-				<p class="score">
-				<span class="label">score:</span>
-				<span class="value">`+ (self.score + 1) +`</span>
-				</p>
+				<div class="time">
+					<p>
+					<span class="label">time:</span>
+					<span class="value">`+ (self.time + 1) +`</span>
+					</p>
+				</div>
+				<div class="hint">
+					<p>
+					<span class="label"></span>
+					<span class="value">`+ (self.hint) +`</span>
+					</p>
+				</div>
+				<div class="score">
+					<p>
+					<span class="label">score:</span>
+					<span class="value">`+ (self.score) +`</span>
+					</p>
+				</div>
 			</div>
 			<div class="main">
 				<div class="board"></div>
@@ -64,10 +71,15 @@ Game.prototype.build = function () {
 		</div>
 	</div>`);
 	// --
+	self.mainContentElement = document.querySelector('body');
+	// debugger;
+	self.mainContentElement.classList.add('background-white');
 	self.boardElement = self.gameScreenElement.querySelector('.board');
 	self.timeElement = self.gameScreenElement.querySelector('.time .value');
-
+	self.scoreElement = self.gameScreenElement.querySelector('.score .value');
+	
 	self.buildBoard();
+	
 	
 	//self.hintElement = self.gameScreenElement.querySelector('.hint .value');
 	//self.scoreElement = self.gameScreenElement.querySelector('.score .value');
@@ -77,20 +89,25 @@ Game.prototype.build = function () {
 	// debugger;
 	document.body.addEventListener('keydown', function(){
 		self.player.update(event);
-
 		self.player.draw();
+		self.scoreElement.innerText = self.player.score;
 
 	});
 
 	self.player = new Player(self.grid);
+	self.voters = new Voters(self.grid);
+	self.ballotBox = new BallotBox(self.grid);
 
-	
 }
 
 Game.prototype.play = function () {
 	var self = this;
 	
 	console.log('the game start');
+
+	self.player.draw();
+	self.voters.draw();
+	self.ballotBox.draw();
 	
 	window.setInterval(function(){
 		self.timeElement.innerText = self.time--;
@@ -113,25 +130,22 @@ Game.prototype.buildBoard = function () {
     self.board[i] += '</div>';
   }
 
-
 	//create the 2d board
 	for (var i = 0; i < 10; i++) {
 		for (var j = 0; j < 10; j++) {
 			self.grid[i][j] += '<div class="element" value="' + i + j + '">a</div>';
 		}
 	}
-/*
-	for (var i = 0; i < 10; i++) {
-		for (var j = 0; j < 10; j++) {
-			self.board[i][j].push = (['<div class="row"><div class="element" value="' + i + j + '">a</div></div>']);
-		}
-	}
-*/
+
 	self.boardElement.innerHTML = self.board.join('');
 	// console.log(self.board);
 }
-
+/*
 Game.prototype.hit = function () {
-  var self = this;
+	var self = this;
 
+	self.player.hit();
+	self.scoreElement.innerHTML = self.player.score;
+	console.log(self.scoreElement);
 }
+*/
