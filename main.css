@@ -1,9 +1,25 @@
 /* ---- layout ---- */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
 
 html,
 body {
   height: 100%;
-  background-color: ghostwhite;
+  background-color: #151515;
+}
+
+html {
+  /*background-color: black;*/
 }
 
 #main-content {
@@ -16,9 +32,15 @@ body {
 button {
   padding: 20px 0;
   font-size: 20px;
-  background-color: white;
+  background-color: #FA5858;
   border: 2px solid black;
   border-radius: 10px;
+  width: 400px;
+  color: #FFF;
+  font-family: 'Cabin Sketch';
+}
+button:hover{
+  background-color: #FE2E2E;
 }
 
 
@@ -31,6 +53,28 @@ button {
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+}
+
+.title-screen .title {
+  font-family: 'Cabin Sketch';
+  font-size: 60px;
+  color: #FFF;
+}
+
+.title-screen .list-instructions {
+  font-size: 24px;
+  color: #FFF;
+  font-family: 'Shadows Into Light';
+  padding: 0px;
+  list-style-type: none;
+}
+
+.title-screen .startGame {
+
+}
+
+.title-screen .viewPortSize {
+  height: 5vh;
 }
 
 /* ---- game screen ---- */

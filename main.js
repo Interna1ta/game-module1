@@ -24,13 +24,17 @@ function main() {
 	function buildTitleScreen() {
 		titleScreenElement = createHtml(`<div id="main-content">
 			<div class="title-screen">
-				<h1>Find the treasure</h1>
-				<button>start game</button>
-				<div class="instructions">
-					<p>guess where is the treasure</p>
-					<p>60 seconds to achieve</p>
-					<p>if you don't guess you suck</p>
+				<span class="viewPortSize"></span>
+				<h1 class="title">WHERE ARE<br>THE BALLOT BOXES?</h1>
+				<div class"instructions">
+					<ul class="list-instructions">
+						<li><p>Get all the ballot boxes</p></li>
+						<li><p>60 seconds to achieve</p></li>
+						<li><p>if you don't guess you suck</p></li>
+					</ul>
 				</div>
+				<div><button class="startGame">A POR ELLOS!!!</button></div>
+				<span class="viewPortSize"></span>
 			</div>
 		</div>`);
 		//--

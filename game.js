@@ -72,13 +72,13 @@ Game.prototype.build = function () {
 	//self.hintElement = self.gameScreenElement.querySelector('.hint .value');
 	//self.scoreElement = self.gameScreenElement.querySelector('.score .value');
 	
+	self.grid = self.gameScreenElement.querySelectorAll('.element');
 	self.parentElement.appendChild(self.gameScreenElement);
 	// debugger;
 	document.body.addEventListener('keydown', function(){
 		self.player.update(event);
-		self.grid = self.gameScreenElement.querySelectorAll('.element');
 
-		self.player.draw(self.grid);
+		self.player.draw();
 
 	});
 

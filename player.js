@@ -45,14 +45,19 @@ Player.prototype.draw = function(){
 	//console.log(self.previousX, self.previousY);
 
 	//self.grid[self.previousX][self.previousY].innerHTML = 'a';
-	self.grid[self.x][self.y].innerHTML = self.image;
-	//self.previousX = self.x;
-	//self.previousY = self.y;
+	if ((self.x>=0 && self.x<=9) && (self.y>=0 && self.y<=9)) {
+		var index = self.x * 10 + self.y;
+		var previousIdx = self.previousX * 10 + self.previousY;
+		self.grid[index].innerHTML = self.image;
+		self.grid[previousIdx].innerHTML = 'a';
+	}
 }
 
 Player.prototype.update = function(event) {
 	var self = this;
 	
+	self.previousX = self.x;
+	self.previousY = self.y;
 	//console.log(event.keyCode)
 	// document.onkeydown = function(event) {
 		switch (event.keyCode) {
@@ -70,4 +75,5 @@ Player.prototype.update = function(event) {
 				break;
 		// }
 	}
+	
 }
