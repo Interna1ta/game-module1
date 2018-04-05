@@ -73,12 +73,21 @@ Player.prototype.draw = function(){
 	var index = self.x * 10 + self.y;
 	var previousIdx = self.previousX * 10 + self.previousY;
 	console.log(index, previousIdx);
-	//debugger;
-	if (index !== 65 && index !== 66) {
+
+	var arrayObstacles = [65, 66, 67, 22, 23];
+	// debugger;
+	var result;
+	arrayObstacles.find(function(obstacle){
+		return index == obstacle ? result = true : result = false;
+	});
+
+	console.log(result);
+
+	if (result == false) {
 		self.grid[index].innerHTML = self.image;
 		self.grid[previousIdx].innerHTML = '';
 		self.hint = '';
-		if (index == 92) {self.hint = 'OMG! You stole a ballot box'}
+		if (index == 92 || index == 19) {self.hint = 'OMG! You stole a ballot box'};
 	} else {
 		self.hit(index);
 		self.x = self.previousX;
@@ -114,7 +123,20 @@ Player.prototype.hit = function (index) {
 	var self = this;
 
 	console.log('hit');
-	self.hint = 'Mother fucker!! That hurts!';
+	//self.hint = 'Mother fucker!! That hurts!';
+	switch (index) {
+			case 65:
+			case 66:
+			case 67:
+				self.hint = 'Mother fucker!! That hurts!';
+				break;
+			case 22:
+				self.hint = 'I dont care about your mission';
+				break;
+			case 23:
+				self.hint = 'We dont want problems with anyone';
+				break;
+		}
 	self.score++;
 	console.log(self.score);
 	//self.scoreElement.innerHTML = self.score;

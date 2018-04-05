@@ -56,11 +56,13 @@ function main() {
 
 	var game;
 	var mainGameScreen;
+	var score;
 
 	function gameEnded() {
 		console.log('im dead')
 		destroyGameScreen();
-		buildGameOverScreen();
+		score = game.player.score;
+		buildGameOverScreen(score);
 	}
 
 	function buildGameScreen() {
@@ -70,12 +72,6 @@ function main() {
 		});
 		game.build();
 		game.play();
-	}
-
-	function timeOut() {
-		destroyGameScreen();
-		//debugger;
-		buildGameOverScreen();
 	}
 
 	function destroyGameScreen(){
@@ -88,17 +84,26 @@ function main() {
 
 	var gameOverScreenElement;
 	var restartGameButtonElement;
+	var gameOverSentence;
 
 	function handleRestartClick() {
 		destroyGameOverScreen();
 		buildGameScreen();
 	}
 
-	function buildGameOverScreen() {
+	function buildGameOverScreen(score) {
+		/*if (score==0) {
+			gameOverSentence1 = "You suck";
+			gameOverSentence2 = "You didn't avoid the votation"
+		} else {
+			gameOverSentence1 = "Great job,<br>you hit `+ (score) +` times";
+			gameOverSentence2 = "Buuuuuut, you didn't avoid the votation";
+		}*/
 		gameOverScreenElement = createHtml(`<div class="game-over-screen">
 			<span class="viewPortSize"></span>
 			<h1 class='title'>GAME OVER</h1>
-			<p class='subtitle'>Great job, <br>you didn't avoid the votation</p>
+			<p class='subtitle'>Great job,<br>you hit `+ score +` times</p>
+			<p class='subtitle'>Buuuuuut, you didn't avoid the votation</p>
 			<div><button>restart game</button></div>
 			<span class="viewPortSize"></span>
 		</div>`);

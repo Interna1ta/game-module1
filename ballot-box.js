@@ -17,5 +17,6 @@ BallotBox.prototype.draw = function(){
 
 	var index = self.x * 10 + self.y;
 	self.grid[index].innerHTML = self.image;
+	self.grid[index-73].innerHTML = self.image;
 }
 

@@ -99,6 +99,8 @@ Game.prototype.build = function () {
 	self.player = new Player(self.grid);
 	self.voters = new Voters(self.grid);
 	self.ballotBox = new BallotBox(self.grid);
+	self.police = new Police(self.grid);
+	self.elements = new Elements(self.grid);
 
 }
 
@@ -110,7 +112,9 @@ Game.prototype.play = function () {
 	self.player.draw();
 	self.voters.draw();
 	self.ballotBox.draw();
-	
+	self.police.draw();
+	self.elements.draw();
+
 	window.setInterval(function(){
 		self.timeElement.innerText = self.time--;
 		
