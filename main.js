@@ -102,7 +102,7 @@ function main() {
 		gameOverScreenElement = createHtml(`<div class="game-over-screen">
 			<span class="viewPortSize"></span>
 			<h1 class='title'>GAME OVER</h1>
-			<p class='subtitle'>Great job,<br>you hit `+ score +` times</p>
+			<p class='subtitle'>Great job,<br>you hit <strong>`+ score +`</strong> times</p>
 			<p class='subtitle'>Buuuuuut, you didn't avoid the votation</p>
 			<div><button>restart game</button></div>
 			<span class="viewPortSize"></span>

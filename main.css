@@ -1,25 +1,15 @@
 /* ---- layout ---- */
+
 html {
   height: 100%;
   box-sizing: border-box;
 }
-/*
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-*/
+
 body {
   margin: 0;
   padding: 0;
-}
-
-body {
   height: 100%;
   background-color: #151515;
-}
-
-html {
-  /*background-color: black;*/
 }
 
 .background-white {
@@ -27,8 +17,10 @@ html {
 }
 
 .turn-image {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  /*filter: FlipH;*/
 }
 
 #main-content {
@@ -101,10 +93,6 @@ button:active {
   list-style-type: none;
 }
 
-.title-screen .startGame {
-
-}
-
 .title-screen .viewPortSize {
   height: 5vh;
 }
@@ -134,6 +122,7 @@ button:active {
   background-color: white;
   margin-bottom: 5vh;
 }
+
 .game-screen .time,
 .game-screen .hint,
 .game-screen .score {
@@ -150,33 +139,11 @@ button:active {
   justify-content: space-around;
   align-items: center;
 }
-.element {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 5px;
-}
-.element img {
-  height: 50px;
-  align-items: center;
-  /*transform: scaleX(-1);*/
-}
 
-.turn {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  /*filter: FlipH;*/
-  -ms-filter: "FlipH";
-}
 
-.element .ballot-box {
-  padding-top: 10px;
-  height: 30px;
-}
 
-.game-screen .footer {
+.game-screen .board {
+  border: 1px solid #A4A4A4;
 
 }
 
@@ -188,9 +155,24 @@ button:active {
   display: inline-block;
   height: 50px;
   width: 50px;
-  border: 1px solid black;
-  padding: 0;
+  border: 1px solid #A4A4A4;
+  padding: 5px;
   margin: 0;
+}
+
+.game-screen img {
+  height: 50px;
+  align-items: center;
+  /*transform: scaleX(-1);*/
+}
+
+.game-screen .ballot-box {
+  padding-top: 10px;
+  height: 30px;
+}
+
+.game-screen .footer {
+
 }
 
 /* ---- game over screen ---- */
