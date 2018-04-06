@@ -30,7 +30,6 @@ function Voters(grid) {
 Voters.prototype.draw = function(){
 	var self = this;
 
-	console.log(self.x, self.y);
 	var index = self.y * 10 + self.x;
 
 	self.grid[index].innerHTML = self.image1;

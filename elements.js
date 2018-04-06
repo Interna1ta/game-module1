@@ -21,15 +21,8 @@ function Elements(grid) {
 Elements.prototype.draw = function(){
 	var self = this;
 
-	console.log(self.x, self.y);
 	var index = self.y * 10 + self.x;
 	
-	/*
-	self.grid[index].innerHTML = self.image2;
-	self.grid[index+1].innerHTML = self.image2;
-	self.grid[index+2].innerHTML = self.image2;
-	self.grid[index+3].innerHTML = self.image2;
-	*/
 	self.grid[index].innerHTML = self.image1;
 	self.grid[index-69].innerHTML = self.image1;
 	self.grid[index-79].innerHTML = self.image1;

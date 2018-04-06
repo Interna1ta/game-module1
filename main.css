@@ -1,3 +1,4 @@
+
 /* ---- layout ---- */
 
 html {
@@ -43,12 +44,6 @@ button {
 
 button:hover {
   background-color: #FE2E2E;
-}
-
-button:active {
-  /*border: 2px solid #FFF;
-  background-color: #FA5858;
-  color: #8A0808;*/
 }
 
 @media (min-width: 768px) {
@@ -140,11 +135,8 @@ button:active {
   align-items: center;
 }
 
-
-
 .game-screen .board {
   border: 1px solid #A4A4A4;
-
 }
 
 .game-screen .row {
@@ -171,8 +163,7 @@ button:active {
   height: 30px;
 }
 
-.game-screen .footer {
-
+.game-screen .ballot-box-stole {
 }
 
 /* ---- game over screen ---- */

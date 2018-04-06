@@ -15,7 +15,6 @@ function Game(parentElement) {
 
 	
 	//self.voters = new Voters();
-	self.treasure = {x: 0, y: 0, show: 'no'};
 	self.guesses = null;
 	self.board = [];
 	self.grid = [[],[],[],[],[],[],[],[],[],[]];

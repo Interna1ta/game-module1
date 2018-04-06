@@ -11,7 +11,6 @@ function Player(grid) {
 	self.image = '<img class="player" class="turn-image" src="https://vignette.wikia.nocookie.net/scribblenauts/images/7/74/Guard.png/revision/latest/scale-to-width-down/133?cb=20130119210144">';
 	self.score = 0;
 	self.scoreElement = '';
-	self.flipElement = '';
 	self.facing = true; // true is 'right' and false is 'left'
 
 	self.punchSound = new Audio('punch.mp3');
@@ -87,6 +86,7 @@ Player.prototype.draw = function(){
 
 	var index = self.y * 10 + self.x;
 	var previousIdx = self.previousY * 10 + self.previousX;
+	
 	console.log(index, previousIdx);
 
 	var arrayObstacles = [4, 5, 15, 25, 26, 27, 28, 29, 60, 61, 62, 63, 64, 69, 70, 71, 72, 73, 74, 79, 94, 95, 96];
@@ -116,7 +116,6 @@ Player.prototype.draw = function(){
 		self.x = self.previousX;
 		self.y = self.previousY;
 	}
-
 }
 
 Player.prototype.update = function(event) {
