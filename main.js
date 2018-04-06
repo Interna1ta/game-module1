@@ -97,7 +97,7 @@ function main() {
 			gameOverSentence2 = "You didn't avoid the votation"
 		} else {
 			gameOverSentence1 = "Great job,<br>you hit `+ (score) +` times";
-			gameOverSentence2 = "Buuuuuut, you didn't avoid the votation";
+			gameOverSentence2 = "Buuuuuut you didn't avoid the votation";
 		}*/
 		gameOverScreenElement = createHtml(`<div class="game-over-screen">
 			<span class="viewPortSize"></span>

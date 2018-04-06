@@ -38,7 +38,6 @@ Game.prototype.onEnded = function(cb) {
 
 Game.prototype.build = function () {
 	var self = this;
-	// self.grid = [[],[],[],[],[],[],[],[],[],[]];
 	
 	self.gameScreenElement = createHtml(`<div id="main-game">
 		<div class="game-screen">
@@ -72,7 +71,6 @@ Game.prototype.build = function () {
 	</div>`);
 	// --
 	self.mainContentElement = document.querySelector('body');
-	// debugger;
 	self.mainContentElement.classList.add('background-white');
 	self.boardElement = self.gameScreenElement.querySelector('.board');
 	self.timeElement = self.gameScreenElement.querySelector('.time .value');
@@ -81,13 +79,9 @@ Game.prototype.build = function () {
 	
 	self.buildBoard();
 	
-	
-	//self.hintElement = self.gameScreenElement.querySelector('.hint .value');
-	//self.scoreElement = self.gameScreenElement.querySelector('.score .value');
-	
 	self.grid = self.gameScreenElement.querySelectorAll('.element');
 	self.parentElement.appendChild(self.gameScreenElement);
-	// debugger;
+
 	document.body.addEventListener('keydown', function(){
 		self.player.update(event);
 		self.player.draw();
@@ -118,7 +112,7 @@ Game.prototype.play = function () {
 	window.setInterval(function(){
 		self.timeElement.innerText = self.time--;
 		
-		if (self.time == 0) {
+		if (self.time == -1) {
 			self.callback();
 		}
 	}, 1000)
@@ -144,14 +138,4 @@ Game.prototype.buildBoard = function () {
 	}
 
 	self.boardElement.innerHTML = self.board.join('');
-	// console.log(self.board);
 }
-/*
-Game.prototype.hit = function () {
-	var self = this;
-
-	self.player.hit();
-	self.scoreElement.innerHTML = self.player.score;
-	console.log(self.scoreElement);
-}
-*/

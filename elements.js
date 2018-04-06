@@ -11,7 +11,8 @@ function Elements(grid) {
 	self.image3 = '<img src="https://vignette.wikia.nocookie.net/scribblenauts/images/9/9f/Wall_Sheathing.png/revision/latest/scale-to-width-down/150?cb=20140819184550">';
 	self.image4 = '<img src="https://vignette.wikia.nocookie.net/scribblenauts/images/9/9e/Pigeon.png/revision/latest?cb=20130523163811">';
 	self.image5 = '<img src="https://vignette.wikia.nocookie.net/scribblenauts/images/3/32/Macaw.png/revision/latest/scale-to-width-down/100?cb=20130618211755">';
-
+	self.image6 = '<img src="https://vignette.wikia.nocookie.net/scribblenauts/images/b/b9/Burmese.png/revision/latest/scale-to-width-down/150?cb=20150601235343">';
+	self.image7 = '<img src="https://vignette.wikia.nocookie.net/scribblenauts/images/5/57/Cruise_Liner.png/revision/latest/scale-to-width-down/200?cb=20130224165337">';
 }
 
 
